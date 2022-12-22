@@ -19,6 +19,7 @@ from ebook import views as ebookViews
 
 urlpatterns = [
     path("admin/", admin.site.urls),
-    path("", ebookViews.home),
-    path("about/", ebookViews.about),
+    path("", ebookViews.home, name="home"),
+    path("about/", ebookViews.about, name="about"),
+    path("signup/", ebookViews.signup, name="signup"),
 ]
