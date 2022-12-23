@@ -18,12 +18,14 @@ from django.urls import path
 from ebook import views as ebookViews
 from django.conf.urls.static import static
 from django.conf import settings
+from django.urls import path, include
 
 urlpatterns = [
     path("admin/", admin.site.urls),
     path("", ebookViews.home, name="home"),
     path("about/", ebookViews.about, name="about"),
     path("signup/", ebookViews.signup, name="signup"),
+    path("news/", include("news.urls")),
 ]
 
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
