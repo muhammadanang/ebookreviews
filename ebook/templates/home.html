@@ -20,9 +20,22 @@
             <button type="submit" class="btn btn-primary">Search</button>
         </form>
         <p>Searching for {{searchTerm}}</p>
-        <h1>Welcome to Home Page</h1>
-        <h2>This is the full home page</h2>
-
+        <div class="row row-cols-1 row-cols-md-3 g-4">
+            {% for ebook in ebooks %}
+            <div v-for="ebook in ebooks" class="col">
+                <div class="card">
+                    <img class="card-img-top" src="{{ ebook.image.url }}" alt="">
+                    <div class="card-body">
+                        <h5 class="card-title fw-bold">{{ ebook.title }}</h5>
+                        <p class="card-text">{{ ebook.description }}</p>
+                        {% if ebook.url %}
+                        <a href="{{ ebook.url }}" class="btn btn-primary">Ebook Link</a>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
         <br>
         <br>
         <h2>Join our mailing list:</h2>
