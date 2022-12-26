@@ -16,7 +16,9 @@
         <div class="card">
             <img class="card-img-top" src="{{ ebook.image.url }}" alt="">
             <div class="card-body">
-                <h5 class="card-title fw-bold">{{ ebook.title }}</h5>
+                <a href="{% url 'detail' ebook.id %}">
+                    <h5 class="card-title fw-bold">{{ ebook.title }}</h5>
+                </a>
                 <p class="card-text">{{ ebook.description }}</p>
                 {% if ebook.url %}
                 <a href="{{ ebook.url }}" class="btn btn-primary">Ebook Link</a>

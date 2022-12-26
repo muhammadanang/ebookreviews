@@ -26,6 +26,7 @@ urlpatterns = [
     path("about/", ebookViews.about, name="about"),
     path("signup/", ebookViews.signup, name="signup"),
     path("news/", include("news.urls")),
+    path("ebook/", include("ebook.urls")),
 ]
 
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
